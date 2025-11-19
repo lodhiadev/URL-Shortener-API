@@ -1,0 +1,7 @@
+import { Router } from 'express';
+import { getAnalytics } from '../controllers/analyticsController';
+import { authenticate } from '../middleware/auth';
+
+const router = Router();
+router.get('/:shortCode', authenticate, getAnalytics);
+export default router;
